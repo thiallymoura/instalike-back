@@ -1,2 +1,4 @@
 node_modules
 chave-api.txt
+BancoMongoDB username:thiallymoura senha:RBgUChsRWRjOYBcM
+string de conexão: mongodb+srv://thiallymoura:RBgUChsRWRjOYBcM@cluster0.evjug.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0 
