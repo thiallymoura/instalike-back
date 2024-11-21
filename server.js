@@ -1,29 +1,20 @@
-// Importar o express
-import express from "express";
+// Importa o framework Express para criar a aplicação web.
+import express from "express"; 
+import routes from "./src/routes/postsRoutes.js";
 
-// Criar um array
-const posts = [
-    { id: 1, descricao: "Primeiro post", imagem: "https://placecats.com/millie/300/150" },
-    { id: 2, descricao: "Post sobre gatos", imagem: "https://placecats.com/millie/300/150" },
-    { id: 3, descricao: "Post sobre cachorros", imagem: "https://placecats.com/millie/300/150" },
-];
 
-// Criar o servidor
+// Cria uma instância do Express, iniciando a aplicação
 const app = express();
-// Definir o caminho 
-app.use(express.json());
+routes(app);
 
 
+// Inicia o servidor na porta 3000 e exibe uma mensagem no console quando o servidor estiver ouvindo.
 app.listen(3000, () => {
     console.log("Servidor escutando...");
 });
 
-// Rotas (caminho) e definir as respostas
-app.get("/posts", (req, res) => {
-    res.status(200).json(posts);
-});
 
-function buscarPostPorId(id) {
+/*function buscarPostPorId(id) {
     return posts.findIndex((post) => {
         return post.id === Number(id);
     });
@@ -33,4 +24,5 @@ app.get("/posts/:id", (req, res) => {
     const index = buscarPostPorId(req.params.id);
     res.status(200).json(posts[index]);
 });
+*/
 
